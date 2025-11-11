@@ -108,12 +108,13 @@ try {
 			$sql = "SELECT ia.nombre AS nombre FROM inscripciones_alumnos ia
 			INNER JOIN inscripciones i ON ia.idInscripcion = i.idInscripcion
 			WHERE i.clase='".$fila['clase']."';";
-			$resultado = $conexion->query($sql);
+			$resultadoAlumnos = $conexion->query($sql);
 
 			echo "<br>Alumnos:";
-			foreach ($resultado as $fila) {
-				echo "<br>- ".$fila['nombre'];
+			foreach ($resultadoAlumnos as $filaAlumno) {
+				echo "<br>- ".$filaAlumno['nombre'];
 			}
+			echo "<br>";
 		}
 	}
 
