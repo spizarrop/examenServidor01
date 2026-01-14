@@ -14,6 +14,7 @@ CREATE TABLE inscripciones (
     observaciones VARCHAR(200) NULL,
 	participa_organizacion bit NOT NULL,
     FOREIGN KEY (idTutor) REFERENCES profesores(idProfesor)
+	ON DELETE CASCADE
 );
 
 CREATE TABLE inscripciones_alumnos (
@@ -21,6 +22,7 @@ CREATE TABLE inscripciones_alumnos (
 	idInscripcion smallint unsigned NOT NULL,
 	nombre VARCHAR(100) NOT NULL, -- Nombre del alumno
 	FOREIGN KEY (idInscripcion) REFERENCES inscripciones(idInscripcion)
+	ON DELETE CASCADE
 );
 
 INSERT INTO profesores (nombre) VALUES 
